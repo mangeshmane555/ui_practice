@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Alerts</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+</head>
+
+<body class="container-fluid">
+  <h2>Table of Contents</h2>
+  <div class="accordion" id="topics">
+    <div class="accordion-item">
+      <h2 class="accordion-header d-grid">
+        <button class="btn btn-danger" data-bs-target="#html" data-bs-toggle="collapse">
+          HTML Tutorial
+        </button>
+      </h2>
+      <div class="collapse accordion-collapse show" id="html" data-bs-parent="#topics">
+        <div class="accordion-body">
+          <ul>
+            <li>Normal Elements</li>
+            <li>Void Elements</li>
+            <li>RC Data Elements</li>
+            <li>Raw Text Elements</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button btn btn-info text-white" data-bs-target="#css" data-bs-toggle="collapse">
+          CSS Examples
+        </button>
+      </h2>
+      <div class="collapse accordion-collapse" id="css" data-bs-parent="#topics">
+        <div class="accordion-body">
+          <ul>
+            <li>Transions</li>
+            <li>Transforms</li>
+            <li>Responsive Design</li>
+            <li>Animations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button btn btn-success" data-bs-target="#js" data-bs-toggle="collapse">
+          JavaScript Tutorial
+        </button>
+      </h2>
+      <div class="collapse accordion-collapse" id="js" data-bs-parent="#topics">
+        <div class="accordion-body">
+          <ul>
+            <li>Variables</li>
+            <li>Data Types</li>
+            <li>Operators</li>
+            <li>Statements</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
