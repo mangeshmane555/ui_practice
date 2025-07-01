@@ -1,0 +1,39 @@
+
+ <!DOCTYPE html>
+ <html>
+    <head>
+        <title>Timing</title>
+        <style>
+          .container {
+              overflow: hidden;
+          }
+          @keyframes slideIn
+          {
+              from 
+              {
+                margin-left: 100%;
+                transform: scale(3);
+                 transform: rotate(0deg);
+              }
+
+               50% {
+                  font-size: 300%;
+              }
+
+              to
+              {
+                  margin-left: 0%;
+                  transform: scale(1);
+                   transform: rotate(360deg);
+              }
+          }
+          h2{
+              animation-name: slideIn;
+              animation-duration: 5s;
+          }
+        </style>
+    </head>
+    <body class="container">
+       <h2>CSS Animations</h2>
+    </body>
+ </html>

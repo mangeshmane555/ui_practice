@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fixed Position</title>
+    <link rel="stylesheet" href="../Fonts/css/all.css" />
+    <style>
+      .box1 {
+        width: 200px;
+        height: 100px;
+        background-color: red;
+        border: 1px solid black;
+      }
+      .box2
+       {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+        border: 1px solid black;
+      }
+      .box3 {
+        width: 200px;
+        height: 100px;
+        background-color: yellow;
+        border: 1px solid black;
+      }
+      .box2 {
+        position: relative;
+        margin-left: 60px;
+      }
+      .boxinner {
+        position: relative;
+        margin-left: 20px;
+        border: 2px solid;
+        height: 100px;
+        background-color: blue;
+      }
+      .container {
+        margin-left: 60px;
+        border: 1px solid;
+      }
+
+      div {
+        border: 2px solid;
+        padding: 10px;
+      }
+      
+      aside {
+        width: 200px;
+        height: 30px;
+        padding: 10px;
+        border: 3px solid darkred;
+        background-color: darkolivegreen;
+        color: white;
+        text-align: center;
+
+        position: fixed;
+        top: 100px;
+        right: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    
+
+    <div>
+      <p>
+        Depending on how you obtained the Windows software, this is a license
+        agreement between (i) you and the device manufacturer or software
+        installer that distributes the software with your device; or (ii) you
+        and Microsoft Corporation (or, based on where you live or, if a
+        business, where your principal place of business is located, one of its
+        affiliates) if you acquired the software from a retailer.
+      </p>
+      <p>
+       
+      <p>
+        Depending on how you obtained the Windows software, this is a license
+        agreement between (i) you and the device manufacturer or software
+        installer that distributes the software with your device; or (ii) you
+        and Microsoft Corporation (or, based on where you live or, if a
+        business, where your principal place of business is located, one of its
+        affiliates) if you acquired the software from a retailer.
+      </p>
+      <p>
+        Depending on how you obtained the Windows software, this is a
+        licenseoftware from a retailer.
+      </p>
+      <aside><span class="fa fa-shopping-cart"></span> Your Cart Items</aside>
+    </div>
+
+    <div class="container">
+      <div class="box1"></div>
+      <div class="box2">
+        <div class="boxinner"></div>
+      </div>
+      <div class="box3"></div>
+    </div>
+  </body>
+</html>
