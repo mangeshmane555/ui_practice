@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forms in HTML</title>
+    <style>
+      form {
+        display: flex;
+        padding: 5px;
+        border: 2px solid darkcyan;
+        border-radius: 10px;
+      }
+      form > div {
+        margin-left: 5px;
+      }
+
+      input::placeholder {
+        color: rgb(47, 180, 147);
+        font-weight: bold;
+        font-family: Arial;
+      }
+
+      input:focus {
+        border: none;
+        box-shadow: 2px 3px 4px green;
+      }
+
+      .terms + span {
+        color: red;
+      }
+
+      .terms:checked + span {
+        color: green;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div>Home | About | Contact</div>
+      <div>
+        <input type="text" placeholder="First Name" />
+      </div>
+      <div>
+        <input type="text" placeholder="Last Name" />
+      </div>
+      <div align="center">
+        <input type="text" size="30" list="terms" />
+        <datalist id="terms">
+          <option>JavaScript Examples</option>
+          <option>JavaScript Tutorial</option>
+          <option>CSS Examples</option>
+          <option>CSS Tutorial</option>
+        </datalist>
+      </div>
+        <select size="3" multiple name="lstProducts">
+              <optgroup  label="Electronics" >
+                <option>Samsung TV</option>
+                <option>LG Mobile</option>
+              </optgroup>
+              <optgroup label="Footwear">
+                <option>Nike Casuals</option>
+                <option>Lee Boot</option>
+                <option>Nike Casuals</option>
+                <option>Lee Boot</option>
+              </optgroup>
+            </select>
+      <div>
+        <input class="terms" type="checkbox" />
+        <span>I Accept</span>
+      </div>
+
+      <div>
+        <button>Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
