@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slide Show</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="../Fonts/css/all.css" />
+    <script>
+      var products = [
+        "../images/portfolio-2.jpg",
+        "../images/portfolio-3.jpg",
+        "../images/portfolio-4.jpg",
+        "../images/portfolio-5.jpg",
+        "../images/portfolio-6.jpg",
+      ];
+      var index = 0;
+      var productNames = ["JBL Speaker", "Earpods", "Nike Casuals", "Shirt"];
+      //console.log(productNames.toString());
+      function loadImage(index) {
+        var pic = document.getElementById("pic");
+        pic.src = products[index];
+        var lblName = document.getElementById("lblName");
+        lblName.innerHTML = productNames[index];
+      }
+      function NextClick() {
+        index++;
+        loadImage(index);
+      }
+      function PreviousClick() {
+        index--;
+        loadImage(index);
+      }
+      function SlideShow() {
+        var txtRange = document.getElementById("txtRange").value;
+        loadImage(txtRange);
+      }
+    </script>
+  </head>
+  <body class="container-fluid" onload="loadImage(0)">
+    <div class="card">
+      <div class="card-header text-center">
+        <h3 id="lblName"></h3>
+      </div>
+      <div class="card-body text-center">
+        <button onclick="PreviousClick()" class="btn btn-outline-danger">
+          <span>&lt;</span>
+        </button>
+        <img id="pic" width="500" height="400" />
+        <button onclick="NextClick()" class="btn btn-outline-danger">
+          <span>&gt;</span>
+        </button>
+      </div>
+      <div class="card-footer text-center">
+        <input
+          type="range"
+          id="txtRange"
+          class="form-control-range"
+          onchange="SlideShow()"
+          min="0"
+          value="0"
+          max="3"
+        />
+      </div>
+    </div>
+  </body>
+</html>

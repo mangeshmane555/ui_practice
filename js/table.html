@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dyamic Insert</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script>
+      // Array of objects
+      var data = [
+        { Name: "Samsung TV", Price: 45000.55 },
+        { Name: "Nike Casuals", Price: 4200.33 },
+      ];
+      function LoadTable() {
+        var tbody = document.getElementById("tbody");
+        tbody.innerHTML = ""; // initialy put tbody blank
+        for (var item of data) {
+          // Create table elements
+          var tr = document.createElement("tr");
+          var tdName = document.createElement("td");
+          var tdPrice = document.createElement("td");
+          // assigning object values to table elements
+          tdName.innerHTML = item.Name;
+          tdPrice.innerHTML = item.Price;
+          tr.appendChild(tdName);
+          tr.appendChild(tdPrice);
+          tbody.appendChild(tr);
+        }
+      }
+      // To load table
+      function bodyload() {
+        LoadTable();
+      }
+      // Data initialy in object
+      var newObject = {
+        Name: "",
+        Price: 0,
+      };
+      function AddClick() {
+        var txtName = document.getElementById("txtName");
+        var txtPrice = document.getElementById("txtPrice");
+        // Adding elements to object
+        newObject = {
+          Name: txtName.value,
+          Price: txtPrice.value,
+        };
+        // Add data to array
+        data.push(newObject);
+        //
+        alert("Record Added");
+        txtName.value = "";
+        txtPrice.value = "";
+        LoadTable();
+      }
+    </script>
+  </head>
+  <body onload="bodyload()" class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <h3>Register Product</h3>
+        <div class="form-group">
+          <label>Name</label>
+          <div>
+            <input type="text" id="txtName" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Price</label>
+          <div>
+            <input type="text" id="txtPrice" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <button onclick="AddClick()" class="btn btn-primary btn block">
+            Add Product
+          </button>
+        </div>
+      </div>
+      <div class="col-9">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

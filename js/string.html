@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>String Demo</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+  <script>
+    function VerifyName() {
+      var txtName = document.getElementById("txtName").value;
+      var msg = document.getElementById("msg");
+      var firstCharCode = txtName.charCodeAt(0);
+      if (firstCharCode >= 65 && firstCharCode <= 90) {
+        msg.innerHTML = "";
+      } else {
+        msg.innerHTML = "Name must start with Uppercase Letter";
+      }
+    }
+    function VerifyCard() {
+      var txtCard = document.getElementById("txtCard").value;
+      var firstChar = txtCard.charAt(0);
+      var cardLogo = document.getElementById("cardLogo");
+      if (firstChar == "4") {
+        cardLogo.src = "../images/portfolio-2.jpg";
+      } else if (firstChar == "5") {
+        cardLogo.src = "../images/portfolio-3.jpg";
+      } else {
+        cardLogo.src = "../images/portfolio-4.jpg";
+      }
+    }
+
+    function VerifyEmail() {
+      var txtEmail = document.getElementById("txtEmail").value;
+      var emailError = document.getElementById("emailError");
+      var atPos = txtEmail.indexOf("@");
+      var dotPos = txtEmail.lastIndexOf(".");
+      if (atPos <= 2 && dotPos - atPos <= 2) {
+        emailError.innerHTML =
+          "Error: @ missing or not at valid position inemail";
+      } else {
+        emailError.innerHTML = "Email Verified";
+      }
+    }
+    function VerifyPassword() {
+      var txtPwd = document.getElementById("txtPwd").value;
+      var pwdError = document.getElementById("pwdError");
+      if (txtPwd.trim() == "john") {
+        pwdError.innerHTML = "Verified";
+      } else {
+        pwdError.innerHTML = "Invalid Password";
+      }
+    }
+  </script>
+</head>
+
+<body class="container-fluid">
+  <div class="form-group">
+    <label>User Name</label>
+    <div>
+      <input onblur="VerifyName()" class="form-control" placeholder="Name must start with Uppercase Letter" type="text"
+        id="txtName" />
+      <div id="msg" class="text-danger"></div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Card Number</label>
+    <div class="input-group">
+      <input onkeyup="VerifyCard()" type="text" id="txtCard" class="form-control" />
+      <div class="input-group-append">
+        <span class="input-group-text">
+          <img id="cardLogo" width="50" height="20" />
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <div>
+          <input onblur="VerifyPassword()" type="password" id="txtPwd" class="form-control" />
+          <div id="pwdError"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <div>
+          <input onblur="VerifyEmail()" id="txtEmail" type="text" class="form-control">
+          <div id="emailError">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
